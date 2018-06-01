@@ -1,311 +1,269 @@
-.chapter(data-title='Browser Calls with Twilio and Rails')
-  .step(data-file='app/assets/javascripts/browser-calls.js',
-    data-highlight='91-105')
+.chapter(data-title='Nim Tuto')
+  .step(data-file='src/hello.nim', data-highlight='1', data-title='Hello World')
     :markdown
-      ## What does this thing do?
+      # ES
 
-      This [Rails](//rubyonrails.org/) web application shows how you can use
-      [Twilio Client](//www.twilio.com/client) to make browser-to-phone and
-      browser-to-browser calls.
+      Bienvenidas al Tutorial de [Nim](https://nim-lang.org)!.
 
-      ![Browser Calls home
-      page](//howtodocs.s3.amazonaws.com/browser-calls/browser-calls-home.png)
+      Este es un tutorial HTML bilingue autoguiado paso-a-paso para aprender a programar en Nim.
 
-      This application powers the support site for the Birchwood Bicycle Polo
-      Co., which sells equipment to those who play ["the sport of
-      kings."](//www.youtube.com/watch?v=DaK9Zj3QHDY) It has three main
-      features:
+      Como todo tutorial empieza con un "Hola Mundo",
+      puedes ejecutar el codigo para mostrar el mensaje `"Hello World"` en la terminal.
 
-      * Unsatisfied customers can submit support tickets with their phone number
-      and their problem.
-      * Support agents can call customers' phones from their browser to follow up
-      on support tickets.
-      * Customers can also use their browser to speak with support agents live
-      when available.
-
-      In this tutorial, we'll point out the key bits of code that make this
-      application work.
-      [Check out the project README on
-      GitHub](//github.com/TwilioDevEd/browser-calls-rails) to see how to run
-      the code yourself.
-
-      Let's get started! Click the right arrow above to advance to the next
-      code snippet.
+      - Clickea la flecha derecha para avanzar.
+      - Clickea la flecha izquierda para retroceder.
+      - Clickea la hamburguesa para mostrar el Menu.
 
       ---
 
-      **See also:**
+      # EN
 
-      * [Twilio Ruby Helper Library](//github.com/twilio/twilio-ruby/)
-      * [Twilio Client docs](//www.twilio.com/docs/client)
-      * [Rails Guides](//guides.rubyonrails.org/)
+      Welcome to the [Nim](https://nim-lang.org) Tutorial!.
 
-  .step(data-file='app/controllers/tickets_controller.rb')
+      This is a self-guided step-by-step bilingual HTML tutorial to learn Nim programming.
+
+      Like all tutorials it starts with a "Hello World",
+      you can execute the code to show the message `"Hello World"` on the terminal.
+
+      - Click the right arrow to advance.
+      - Click the left arrow to go backwards.
+      - Click the Hamburguer to show the Menu.
+
+
+
+
+  .step(data-file='src/assign_variable.nim', data-title='Variables')
     :markdown
-      ## Submit a support ticket
+      # ES
 
-      The home page of our app displays a form for customers to submit support
-      tickets. We use
-      [Rails layouts](//guides.rubyonrails.org/layouts_and_rendering.html)
-      to power the page.
+      Puedes controlar la Inmutabilidad de las variables usando `var`, `let` y `const`.
 
-      The `Ticket` model itself has just a few fields:
+      - `var` Mutable.
+      - `let` Inmutable.
+      - `const` Inmutable (Evaluado en tiempo de compilacion).
 
-      ```
-      class Ticket < ActiveRecord::Base
-        validates :name, :phone_number, :description, presence: true
-      end
-      ```
+      *Si se te complica podes usar `var` en todos lados!.*
 
       ---
 
-      **See also:**
+      # EN
 
-      * [Layouts and Rendering in Rails](//guides.rubyonrails.org/layouts_and_rendering.html)
-      * [Active Record](//guides.rubyonrails.org/active_record_basics.html)
+      You can control the immutability of variables using `var`, `let` and `const`.
 
-  .step(data-file='app/views/dashboard/index.erb', data-highlight='25-48')
+      - `var` Mutable.
+      - `let` Inmutable.
+      - `const` Inmutable (Evaluated at compile time).
+
+      *If you get complicated you can use `var` everywhere!.*
+
+
+
+
+  .step(data-file='src/comments.nim', data-title='Comments')
     :markdown
-      ## The support dashboard
+      # ES
 
-      When a support agent visits `/dashboard`, they see all the support
-      tickets which have been submitted.
+      Comentarios de codigo empiezan con `#` o `##`.
 
-      ![Browser Calls support dashboard](//howtodocs.s3.amazonaws.com/browser-calls/browser-calls-dashboard.png)
+      - `#` Comentario, Ignorado por Nim.
+      - `##` Comentario DocString, usado para generar Auto-Documentacion.
 
-      Each ticket also has a "Call Customer" button which invokes a JavaScript
-      function we wrote named `callCustomer()`. That function kicks off a Twilio
-      Client call to the phone number passed as its sole parameter.
+      Los Comentarios DocString pueden ser agregados en cualquier lado en el codigo.
 
-  .step(data-file='lib/twilio_capability.rb', data-highlight='1-15')
-    :markdown
-      ## Generate a capability token
-
-      Before our users can make calls with Twilio Client in their browser, we
-      need to provide them with a capability token.
-
-      We use the [twilio-ruby](//twilio-ruby.readthedocs.org/en/latest/)
-      helper library to generate and configure our capability tokens. To allow
-      our support agents to call the phone numbers on our tickets, we use the
-      `allow_client_outgoing` method.
-
-      That method requires an identifier for a
-      [TwiML Application](//www.twilio.com/help/faq/twilio-client/how-do-i-create-a-twiml-app).
-      Twilio will send a POST request to our backend every time a user makes a
-      Twilio Client call — the TwiML Application tells Twilio which URL to send
-      that request to.
+      Los Comentarios DocString seran parseados como [ReStructuredText](https://es.wikipedia.org/wiki/ReStructuredText) o Texto plano.
 
       ---
 
-      **See also:**
+      # EN
 
-      * [Twilio Client: Capability Tokens](//www.twilio.com/docs/client/capability-tokens)
-      * [Generate Capability Tokens with twilio-ruby](//twilio-ruby.readthedocs.org/en/latest/usage/token-generation.html)
+      Code comments start with `#` or `##`.
 
-  .step(data-file='app/assets/javascripts/browser-calls.js', data-highlight='18-29')
+      - `#` Comment, Ignored by Nim.
+      - `##` DocString Comment, used for Self-Documentation.
+
+      The DocString Comments can be added anywhere on the code.
+
+      The DocString Comments will be parsed as [ReStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) or plain Text.
+
+
+
+
+  .step(data-file='src/basic_types_boolean.nim', data-title='Boolean')
     :markdown
-      ## Set up Twilio Client
+      # ES
 
-      To use Twilio Client in a web browser we use the
-      [twilio.js library](//www.twilio.com/docs/client/twilio-js).
+      Tipo Booleano, representa verdadero o falso.
 
-      We start by retrieving a capability token from the view we defined in the
-      previous step with an AJAX request. We then enable Twilio Client
-      for this page by passing our token to `Twilio.Device.setup()`.
-
-      The `Twilio.Device.ready()` callback lets us know when the browser is
-      ready to make and receive calls.
+      - `true` Verdadero.
+      - `false` Falso.
+      - `bool()` se usa para evaluar un argumento a Booleano.
 
       ---
 
-      **See also:**
+      # EN
 
-      * [jQuery .get()](//api.jquery.com/jquery.get/)
-      * [Twilio.Device.setup()](//www.twilio.com/docs/client/device#setup)
-      * [Twilio.Device.ready()](//www.twilio.com/docs/client/device#ready)
+      Boolean type, represents true or false.
 
-  .step(data-file='app/assets/javascripts/browser-calls.js', data-highlight='91-97')
+      - `true` True.
+      - `false` False.
+      - `bool()` used to evaluate an argument to a Boolean.
+
+
+
+
+  .step(data-file='src/basic_types_string.nim', data-title='String & Char')
     :markdown
-      ## Call a customer (browser-to-phone)
+      # ES
 
-      When our support agent clicks "Call Customer" on a support ticket, this
-      function initiates the call.
+      ##### String
 
-      We use `Twilio.Device.connect()` to begin a new outgoing call. Our backend
-      will tell Twilio how to handle this call, so we include a `phoneNumber`
-      parameter that we'll use in our `call` view.
+      Tipo String, representa una cadena de caracteres de texto.
 
-      Let's look at that view next.
+      Puede soportar Unicode, UTF-8, Emoji, y otros caracteres raros.
+
+      - `""` es el constructor del tipo `string`.
+
+      ##### Char
+
+      Tipo Char, representa un caracter de texto, solo 1.
+
+      Puede soportar ASCII solamente, no puede estar vacio.
+
+      Internamente `char` esta optimizado a un numero entero, por lo que es muy rapido y liviano.
+
+      - `' '` es el constructor del tipo `char`.
 
       ---
 
-      **See also:**
+      # EN
 
-      * [Twilio.Device.connect()](//www.twilio.com/docs/client/device#connect)
+      ##### String
 
-  .step(data-file='app/controllers/call_controller.rb', data-highlight='1-16, 19-23')
+      String type, represents a sequence of text characters.
+
+      It can support Unicode, UTF-8, Emoji, and other weird characters.
+
+      - `""` is the constructor of the `string` type.
+
+      ##### Char
+
+      Char type, represents one text character, just 1.
+
+      It can support ASCII only, it can not be empty.
+
+      Internally `char` its optimized to an integer number, so its fast and lightweight.
+
+      - `' '` its the constructor of the `char` type.
+
+
+
+
+  .step(data-file='src/basic_types_integers.nim', data-title='Integers')
     :markdown
-      ## Connect the call to a phone number
+      # ES
 
-      Whenever one of our users makes a call, Twilio will send a POST request to
-      the URL we set on our TwiML Application - in this case,
-      `/call/connect`.
+      Tipo Entero, representa un numero entero, positivo o negativo.
 
-      We use [TwiML](//www.twilio.com/docs/api/twiml) to respond to the
-      request and tell Twilio how to handle the call. Twilio will pass along the
-      `phoneNumber` parameter from the previous step in its request, which
-      we will then [Dial](//www.twilio.com/docs/api/twiml/dial) in our TwiML.
+      Existen varias medidas de enteros y una medida de entero por defecto,
+      dependiendo de cuantos bits se usa para representarlos internamente,
+      los enteros chicos usan menos menos recursos y son mas rapidos,
+      los enteros grandes pueden acomodar numeros mucho mas grandes.
+
+      - Literal siempre genera un `int`.
+      - `int` es `int64` en CPU de 64bits, es `int32` en CPU de 32bits.
+      - `int8` desde `-128` hasta `127`.
+      - `int16` desde `-32768` hasta `32767`.
+      - `int32` desde `-2147483648` hasta `2147483647`.
+      - `int64` desde `-9223372036854775808` hasta `9223372036854775807`.
+
+      *Si se te complica, podes usar `int` para todo!.*
 
       ---
 
-      **See also:**
+      # EN
 
-      * [<Number> TwiML verb](//www.twilio.com/docs/api/twiml/number)
-      * [TwiML creation with twilio-ruby](//twilio-ruby.readthedocs.org/en/latest/usage/twiml.html)
-      * [Rails verify authenticity token](//apidock.com/rails/v4.2.1/ActionController/RequestForgeryProtection/verify_authenticity_token)
+      Integer type, represents an integer number, positive o negative.
 
-  .step(data-file='app/assets/javascripts/browser-calls.js', data-highlight='47-63')
+      Theres multiple sizes of integers and one default integer size,
+      they depend on how many it they use to be represented internally,
+      the smaller integers use less resources and they are faster,
+      the bigger integer can hold bigger integer numbers.
+
+      - Literals always generate an `int`.
+      - `int` is `int64` on 64bits CPU, `int32` on 32bits CPU.
+      - `int8` from `-128` to `127`.
+      - `int16` from `-32768` to `32767`.
+      - `int32` from `-2147483648` to `2147483647`.
+      - `int64` from `-9223372036854775808` to `9223372036854775807`.
+
+      *If you get complicated, you can use `int` for everything!.*
+
+
+
+
+  .step(data-file='src/basic_types_floats.nim', data-title='Floats')
     :markdown
-      ## The call is live
+      # ES
 
-      After our `call` view responds, Twilio completes the connection between
-      our support agent's browser and the customer's phone.
+      Tipo Flotante, representa un numero de punto flotante, positivo o negativo.
 
-      We use the `Twilio.Device.connect()` callback to update some UI elements
-      and make it clear our user is in a call. This function receives a
-      [Connection](//www.twilio.com/docs/client/connection) object,
-      which offers some additional details about the call.
+      Existen 2 medidas de flotantes y una medida de flotante por defecto,
+      dependiendo de cuantos bits se usa para representarlos internamente,
+      el flotante chico usa menos recursos y es mas rapido,
+      el flotante grande pueden acomodar numeros mucho mas grandes.
+
+      - Literal siempre genera un `float`.
+      - `float` es `float64`.
+
+      *Si se te complica, podes usar `float` para todo!.*
 
       ---
 
-      **See also:**
+      # EN
 
-      * [Twilio.Device.connect() callback](//www.twilio.com/docs/client/device#connect-handler)
-      * [jQuery .prop()](//api.jquery.com/prop/)
+      Float type, represents an floating point number, positive o negative.
 
-  .step(data-file='app/assets/javascripts/browser-calls.js', data-highlight='99-105')
+      Theres 2 sizes of floats  and one default float size,
+      they depend on how many bits they use to be represented internally,
+      the smaller float use less resources and is faster,
+      the bigger float can hold bigger floating point numbers.
+
+      - Literals always generate an `float`.
+      - `float` is `float64`.
+
+      *If you get complicated, you can use `float` for everything!.*
+
+
+
+
+
+
+
+
+
+
+
+  .step(data-title='End')
     :markdown
-      ## Call a support agent (browser-to-browser)
+      ## This is the beginning, is not the end...
 
-      Support tickets are useful, but sometimes a customer needs help right now.
-      With just a little more work we let customers speak with a support agent
-      live via a browser-to-browser call.
 
-      ![Browser Calls call support](//howtodocs.s3.amazonaws.com/browser-calls/browser-calls-call-support.png)
 
-      When a customer clicks "Call support" on the home page we again use
-      `Twilio.Device.connect()` to initiate the call. This time we don't pass
-      any additional parameters — our backend will route this call to our
-      support agent.
+      ### Links
 
-      ---
+      - [Nim Homepage](https://nim-lang.org).
+      - [Nimble](https://nimble.directory).
+      - [Nim Twitter (EN)](https://twitter.com/nim_lang).
+      - [Nim Twitter (ES)](https://twitter.com/nim_ar).
+      - [Nim Telegram (EN)](https://t.me/nim_lang).
+      - [Nim Telegram (ES)](https://t.me/NimArgentina).
+      - [Nim Telegram StickerPack](https://t.me/addstickers/nimlang).
+      - [Nim GitHub](https://github.com/nim-lang).
+      - [Nim Forum](https://forum.nim-lang.org).
+      - [Nim StackOverflow](https://stackoverflow.com/questions/tagged/nim).
+      - [Nim DevDocs](http://devdocs.io/nim).
+      - [Nim Rosetta](http://rosettacode.org/wiki/Category:Nim).
+      - [Awesome Nim](https://github.com/VPashkov/awesome-nim).
+      - [Nim Tuto](https://github.com/juancarlospaco/nim-tuto#nim-tuto).
 
-      **See also:**
-
-      * [Twilio.Device.connect()](//www.twilio.com/docs/client/device#connect)
-
-  .step(data-file='app/controllers/call_controller.rb', data-highlight='13-21')
-    :markdown
-      ## Connect the call to the support agent's client
-
-      To allow our support agents to accept incoming calls we use the
-      `allow_client_incoming()` method when generating their capability token,
-      passing support_agent as the client's name:
-
-      ```
-      capability.allow_client_incoming 'support_agent'
-      ```
-
-      Then, when Twilio sends a POST request to our `/call/connect` end point,
-      we can connect the call to our support agent by responding with a
-      [<Client>](//www.twilio.com/docs/api/twiml/client) TwiML noun and
-      the `support_agent` name.
-
-      ---
-
-      **See also:**
-
-      * [Allow Incoming Connections on Capability Tokens](//www.twilio.com/docs/client/capability-tokens#allow-incoming-connections)
-
-  .step(data-file='app/assets/javascripts/browser-calls.js', data-highlight='75-89')
-    :markdown
-      ## Answer the call
-
-      When our support agent's client receives an incoming call, it will trigger
-      the function we defined on the `Twilio.Device.incoming()` callback.
-
-      The incoming `connection` will be in a "pending" state until we invoke its
-      `.accept()` method, which we do in a function bound to the "Answer
-      call" button.
-
-      We also set a `.accept()` callback to update the UI once the call is live.
-
-      ---
-
-      **See also:**
-
-      * [Twilio.Device.incoming()](//www.twilio.com/docs/client/device#incoming)
-      * [Twilio.Device.accept()](//www.twilio.com/docs/client/connection#accept)
-      * [jQuery .click()](//api.jquery.com/click/)
-
-  .step(data-file='app/assets/javascripts/browser-calls.js', data-highlight='107-110, 65-73')
-    :markdown
-      ## End a call
-
-      To end a call we invoke `Twilio.Device.disconnectAll()`, which we wired
-      to the "Hang up" button in our UI.
-
-      We also define a callback function with `Twilio.Device.disconnect()`,
-      above, to reset some UI elements.
-
-      ---
-
-      **See also:**
-
-      * [Twilio.Device.disconnectAll()](//www.twilio.com/docs/client/device#disconnect-all)
-      * [Twilio.Device.disconnect()](//www.twilio.com/docs/client/device#disconnect)
-
-  .step(data-file='app/assets/javascripts/browser-calls.js', data-highlight='36-45')
-    :markdown
-      ## Check if a support agent is available
-
-      If a customer calls support but no support agent is online, their call
-      will go unanswered. To help avoid this frustration, we display a message
-      above the "Call support" button when no agent is available:
-
-      ![Browser Calls support unavailable](//howtodocs.s3.amazonaws.com/browser-calls/browser-calls-support-unavailable.png)
-
-      We use `Twilio.Device.presence()` to update this message when the
-      support agent's availability changes.
-
-      ---
-
-      **See also:**
-
-      * [Twilio Client .presence()](//www.twilio.com/docs/client/device#presence)
-
-  .step
-    :markdown
-      ## Where to next?
-
-      That's it! Our Rails application now powers browser-to-phone and
-      browser-to-browser calls using Twilio Client.
-
-      If you're a Ruby developer working with Twilio, you might also enjoy these
-      tutorials:
-
-      [**Click-To-Call**](//www.twilio.com/docs/howto/walkthrough/click-to-call/ruby/rails)
-
-      Put a button on your web page that connects visitors to live support or
-      sales people via telephone.
-
-      [**Automated Survey**](//www.twilio.com/docs/howto/walkthrough/automated-survey/ruby/rails)
-
-      Instantly collect structured data from your users with a survey conducted
-      over a voice call or SMS text messages.
-
-      ### Did this help?
-
-      Thanks for checking out this tutorial! If you have any feedback
-      to share with us, we'd love to hear it.
-      [Contact the Twilio Developer Education Team](mailto:deved-oss@twilio.com) to let us know what you think.
+      [Creative Commons Attribution-NonCommercial-ShareAlike CC-BY-NC-SA 4.0+](https://creativecommons.org/licenses/by-nc-sa/4.0/)
