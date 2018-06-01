@@ -162,6 +162,25 @@ the bigger float can hold bigger floating point numbers.</p>
 <li><code>float</code> is <code>float64</code>.</li>
 </ul>
 <p><em>If you get complicated, you can use <code>float</code> for everything!.</em></p>
+</div><div data-file="src/basic_types_tuples.nim" data-title="Tuples" class="step"><h1 id="es">ES</h1>
+<p>Tipo Tupla, representa una secuencia de objetos ordenados por un numero de indice,
+es inmutable, de solo lectura, cada item tiene un nombre.</p>
+<p>En Nim la Tupla tiene items nombrados, puede accederse a los items por indice o por nombre,
+si se omiten los nombres de los items Nim usara <code>field0</code>, <code>field1</code>, <code>field2</code>, <code>field3</code>, etc.</p>
+<p>Es muy similar a la <code>NamedTuple</code> del lenguaje de programacion Python.</p>
+<p>Las tuplas pueden tener tuplas dentro.</p>
+<p>La tupla se puede usar de manera simple, solo construyendola con los items <code>(1, 2, 3)</code> o
+puede usarse declarando previamente un tipo <code>type NombreDeLaTupla = tuple[nombre: tipo, nombre: tipo]</code></p>
+<hr>
+<h1 id="en">EN</h1>
+<p>Tuple type, represents an sequence of objects ordered by an index number,
+its inmmutable, kinda read-only, each item has a name.</p>
+<p>On Nim the tuple has named items, can be accessed by index or by name,nombre: tipo,
+if the items names are omitted Nim will use <code>field0</code>, <code>field1</code>, <code>field2</code>, <code>field3</code>, etc.</p>
+<p>Its very similar to Pythons programming language <code>NamedTuple</code>.</p>
+<p>Tuples can contain tuples inside.</p>
+<p>The tuple can be used on a simple way, just constructing it with the items <code>(1, 2, 3)</code> or
+can be used declaring a tuple type <code>type TupleName = tuple[name: type, name: type]</code></p>
 </div><div data-title="End" class="step"><h2 id="this-is-the-beginning-is-not-the-end-">This is the beginning, is not the end...</h2>
 <h3 id="links">Links</h3>
 <ul>
@@ -189,5 +208,6 @@ the bigger float can hold bigger floating point numbers.</p>
 <textarea class="saurus-file" data-file="src/basic_types_string.nim" data-mode="text">IyBTdHJpbmcKdmFyIHN0cmluZ190eXBlID0gIkhlbGxvIFdvcmxkIgp2YXIgd2hpdGVzcGFjZXMgPSAiICIKdmFyIGVtcHR5c3RyaW5nID0gIiIKdmFyIGZveF9zdHJpbmdzID0gIlRoZSBxdWljayBicm93biBmb3gganVtcHMgb3ZlciB0aGUgbGF6eSBkb2ciCgoKIyBDaGFyCnZhciBjaGFyX3R5cGUgPSAnYScKdmFyIHdoaXRlc3BhY2UgPSAnICcKdmFyIGFub3RoZXIgPSAnOScK</textarea>
 <textarea class="saurus-file" data-file="src/basic_types_integers.nim" data-mode="text">dmFyIGlzX3plcm8gPSAwCnZhciBpbnRlZ2VyX3R5cGUgPSA0Mgp2YXIgbmVnYXRpdmVfaW50ID0gLTY2NgoKdmFyIGludGVnZXIgPSBpbnQoMTIzKSAgIyBpbnQ2NCBvbiA2NGJpdCBDUFUsIGludDMyIG9uIDMyYml0IENQVQoKdmFyIGludGVnZXJfOGJpdHMgPSBpbnQ4KDEyMykKdmFyIGludGVnZXJfMTZiaXRzID0gaW50MTYoMTIzKQp2YXIgaW50ZWdlcl8zMmJpdHMgPSBpbnQzMigxMjMpCnZhciBpbnRlZ2VyXzY0Yml0cyA9IGludDY0KDEyMykK</textarea>
 <textarea class="saurus-file" data-file="src/basic_types_floats.nim" data-mode="text">dmFyIGZsb2F0X3R5cGUgPSAyLjAgICAgICAjIGZsb2F0NjQKdmFyIGFub3RoZXIgPSBmbG9hdCgxLjApICAgIyBmbG9hdDY0Cgp2YXIgb25lbW9yZSA9IGZsb2F0MzIoMS4wKQp2YXIgcmVwZWF0cyA9IGZsb2F0NjQoMS4wKQo=</textarea>
+<textarea class="saurus-file" data-file="src/basic_types_tuples.nim" data-mode="text">dmFyIHR1cGxlX3R5cGUgPSAoMSwgMiwgMywgNCkgICMgUXVpY2sgdXNlLgoKIyBEZWNsYXJpbmcgYSBuZXcgVHVwbGUgdHlwZSwgd2l0aCBpdGVtcyBuYW1lcyBhbmQgdHlwZXMuCnR5cGUgUGVyc29uID0gdHVwbGVbbmFtZTogc3RyaW5nLCBhZ2U6IGludCwgYWN0aXZlOiBib29sXQojIFVzaW5nIHRoZSBkZWNsYXJlZCB0dXBsZS4KdmFyIHNvbWV0dXBsZTogUGVyc29uID0gKG5hbWU6ICJMZW8gVGh1em1leWwiLCBhZ2U6IDI1LCBhY3RpdmU6IHRydWUpCg==</textarea>
 </div>
 </div><div class="saurus-overview"><ul></ul></div></div><div class="saurus-code"><div class="file-path"><span class="crumb-container"></span><i class="fa fa-fw fa-folder"></i></div><div class="saurus-editor"></div></div><div class="saurus-explorer"><div class="saurus-file-list"></div><a href="https://github.com/juancarlospaco/nim-tuto#nim-tuto" target="_blank" class="explorer-get-code"> <i class="fa fa-lg fa-github-square"> </i>View Code on GitHub</a></div></div></div></div><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script><script src="ace/ace.js"></script><script src="ace/theme-monokai.js"></script><script src="viewsaurus.js"></script></body></html>

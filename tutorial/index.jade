@@ -236,6 +236,40 @@
 
 
 
+  .step(data-file='src/basic_types_tuples.nim', data-title='Tuples')
+    :markdown
+      # ES
+
+      Tipo Tupla, representa una secuencia de objetos ordenados por un numero de indice,
+      es inmutable, de solo lectura, cada item tiene un nombre.
+
+      En Nim la Tupla tiene items nombrados, puede accederse a los items por indice o por nombre,
+      si se omiten los nombres de los items Nim usara `field0`, `field1`, `field2`, `field3`, etc.
+
+      Es muy similar a la `NamedTuple` del lenguaje de programacion Python.
+
+      Las tuplas pueden tener tuplas dentro.
+
+      La tupla se puede usar de manera simple, solo construyendola con los items `(1, 2, 3)` o
+      puede usarse declarando previamente un tipo `type NombreDeLaTupla = tuple[nombre: tipo, nombre: tipo]`
+
+      ---
+
+      # EN
+
+      Tuple type, represents an sequence of objects ordered by an index number,
+      its inmmutable, kinda read-only, each item has a name.
+
+      On Nim the tuple has named items, can be accessed by index or by name,nombre: tipo,
+      if the items names are omitted Nim will use `field0`, `field1`, `field2`, `field3`, etc.
+
+      Its very similar to Pythons programming language `NamedTuple`.
+
+      Tuples can contain tuples inside.
+
+      The tuple can be used on a simple way, just constructing it with the items `(1, 2, 3)` or
+      can be used declaring a tuple type `type TupleName = tuple[name: type, name: type]`
+
 
 
 
