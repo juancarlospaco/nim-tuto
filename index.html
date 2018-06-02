@@ -45,7 +45,8 @@ you can execute <code>nim c -r hello.nim</code> to show the message <code>&quot;
 <hr>
 <h3 id="es">ES</h3>
 <p>Puedes controlar la Inmutabilidad de las variables usando <code>var</code>, <code>let</code> y <code>const</code>.
-Intentar modificar una variable inmmutable devolvera un error como es de esperarse.</p>
+Intentar modificar una variable inmmutable devolvera un error como es de esperarse.
+2 underscores seguidos continuos <code>__</code> en los nombes no esta permitidos.</p>
 <ul>
 <li><code>var</code> Mutable.</li>
 <li><code>let</code> Inmutable.</li>
@@ -55,7 +56,8 @@ Intentar modificar una variable inmmutable devolvera un error como es de esperar
 <hr>
 <h3 id="en">EN</h3>
 <p>You can control the immutability of variables using <code>var</code>, <code>let</code> and <code>const</code>.
-Trying to modify an inmmutable variable will return an error as expected.</p>
+Trying to modify an inmmutable variable will return an error as expected.
+2 immediate following underscores <code>__</code> on names are not allowed.</p>
 <ul>
 <li><code>var</code> Mutable.</li>
 <li><code>let</code> Inmutable.</li>
@@ -290,7 +292,7 @@ eg integer numbers, if a value out of the limits is used it produces an error.</
 <textarea class="saurus-file" data-file="src/assign_variable.nim" data-mode="text">dmFyIHRoaXNfdmFyaWFibGVfY2FuX2NoYW5nZSA9ICJFc3RhIHZhcmlhYmxlIHB1ZWRlIGNhbWJpYXIiCnRoaXNfdmFyaWFibGVfY2FuX2NoYW5nZSA9ICJmb28gYmFyIGJheiIKCmxldCB0aGlzX3ZhcmlhYmxlX2Nhbl9ub3RfY2hhbmdlID0gIkVzdGEgdmFyaWFibGUgTm8gc2UgcHVlZGUgY2FtYmlhciIKCmNvbnN0IHRoaXNfdmFyaWFibGVfaXNfY29tcGlsZV90aW1lX2NvbnN0YW50ID0gIkNvbnN0YW50ZSBkZSBDb21waWxhY2lvbiIK</textarea>
 <textarea class="saurus-file" data-file="src/comments.nim" data-mode="text">IyAgVGhpcyBpcyBhIENvbW1lbnQsIGlnbm9yZWQgYnkgTmltLgoKIyMgVGhpcyBpcyBhIERvY1N0cmluZyBDb21tZW50LCB1c2VkIGZvciBTZWxmLURvY3VtZW50YXRpb24uCg==</textarea>
 <textarea class="saurus-file" data-file="src/basic_types_boolean.nim" data-mode="text">dmFyIGlzX3RydWUgPSB0cnVlCnZhciBpc19mYWxzZSA9IGZhbHNlCgp2YXIgYW5vdGhlciA9IGJvb2woMSkgICMgdHJ1ZQp2YXIgb3RoZXJzID0gYm9vbCgwKSAgICMgZmFsc2UK</textarea>
-<textarea class="saurus-file" data-file="src/basic_types_string.nim" data-mode="text">IyBTdHJpbmcKdmFyIHN0cmluZ190eXBlID0gIkhlbGxvIFdvcmxkIgp2YXIgd2hpdGVzcGFjZXMgPSAiICIKdmFyIGVtcHR5c3RyaW5nID0gIiIKdmFyIGZveF9zdHJpbmdzID0gIlRoZSBxdWljayBicm93biBmb3gganVtcHMgb3ZlciB0aGUgbGF6eSBkb2ciCgoKIyBDaGFyCnZhciBjaGFyX3R5cGUgPSAnYScKdmFyIHdoaXRlc3BhY2UgPSAnICcKdmFyIGFub3RoZXIgPSAnOScK</textarea>
+<textarea class="saurus-file" data-file="src/basic_types_string.nim" data-mode="text">IyBTdHJpbmcKdmFyIHN0cmluZ190eXBlID0gIkhlbGxvIFdvcmxkIgp2YXIgd2hpdGVzcGFjZXMgPSAiICIKdmFyIGVtcHR5c3RyaW5nID0gIiIKdmFyIGZveF9zdHJpbmdzID0gIlRoZSBxdWljayBicm93biBmb3gganVtcHMgb3ZlciB0aGUgbGF6eSBkb2ciCgojIFJhdyBzdHJpbmcgbGl0ZXJhbHMgYW5kIE11bHRpbGluZSBzdHJpbmcgbGl0ZXJhbHMKdmFyIHJhd19zdHJpbmdfbGl0ZXJhbCA9IHIiUmF3IHN0cmluZyBsaXRlcmFscyIKdmFyIG11bHRpbGluZV9zdHJpbmcgPSAiIiIKVGhpcyBpcyBhIE11bHRpbGluZSBTdHJpbmcsIG9mIHN0cmluZyB0eXBlLCBpdCBjYW4gaGF2ZSBxdW90ZSBjaGFyYWN0ZXJzIGluc2lkZSwKbGlrZSAnLCAiLCBcbiAsIFxyLCBcYywgXHgwMCwgXHQsIEVtb2ppLCBldGMgd2l0aG91dCBwcm9kdWNpbmcgYW55IGVycm9ycy4gOikKIiIiCgojIENoYXIKdmFyIGNoYXJfdHlwZSA9ICdhJwp2YXIgd2hpdGVzcGFjZSA9ICcgJwp2YXIgYW5vdGhlciA9ICc5Jwo=</textarea>
 <textarea class="saurus-file" data-file="src/basic_types_integers.nim" data-mode="text">dmFyIGlzX3plcm8gPSAwCnZhciBpbnRlZ2VyX3R5cGUgPSA0Mgp2YXIgbmVnYXRpdmVfaW50ID0gLTY2Ngp2YXIgYmlnX2ludGVnZXIgPSAyXzE0N180ODNfNjQ3ICAjIF8gYXJlIGlnbm9yZWQsIGxpa2Ugb24gUHl0aG9uLgoKdmFyIGludGVnZXIgPSBpbnQoMTIzKSAgIyBpbnQ2NCBvbiA2NGJpdCBDUFUsIGludDMyIG9uIDMyYml0IENQVQoKdmFyIGludGVnZXJfOGJpdHMgPSBpbnQ4KDEyMykKdmFyIGludGVnZXJfMTZiaXRzID0gaW50MTYoMTIzKQp2YXIgaW50ZWdlcl8zMmJpdHMgPSBpbnQzMigxMjMpCnZhciBpbnRlZ2VyXzY0Yml0cyA9IGludDY0KDEyMykK</textarea>
 <textarea class="saurus-file" data-file="src/basic_types_floats.nim" data-mode="text">dmFyIGZsb2F0X3R5cGUgPSAyLjAgICAgICAjIGZsb2F0NjQKdmFyIGFub3RoZXIgPSBmbG9hdCgxLjApICAgIyBmbG9hdDY0Cgp2YXIgb25lbW9yZSA9IGZsb2F0MzIoMS4wKQp2YXIgcmVwZWF0cyA9IGZsb2F0NjQoMS4wKQo=</textarea>
 <textarea class="saurus-file" data-file="src/basic_types_tuples.nim" data-mode="text">dmFyIHR1cGxlX3R5cGUgPSAoMSwgMiwgMywgNCkgICMgUXVpY2sgdXNlLgoKIyBEZWNsYXJpbmcgYSBuZXcgVHVwbGUgdHlwZSwgd2l0aCBpdGVtcyBuYW1lcyBhbmQgdHlwZXMuCnR5cGUgUGVyc29uID0gdHVwbGVbbmFtZTogc3RyaW5nLCBhZ2U6IGludCwgYWN0aXZlOiBib29sXQoKIyBVc2luZyB0aGUgZGVjbGFyZWQgdHVwbGUuCnZhciBzb21ldHVwbGU6IFBlcnNvbiA9IChuYW1lOiAiTGVvIFRodXptZXlsIiwgYWdlOiAyNSwgYWN0aXZlOiB0cnVlKQoKdmFyIGNoaWxkOiB0dXBsZVtuYW1lOiBzdHJpbmcsIGFnZTogaW50XQpjaGlsZCA9IChuYW1lOiAiUnVkaWdlciIsIGFnZTogMikKCnZhciB0b2RheTogdHVwbGVbc3VuOiBzdHJpbmcsIHRlbXA6IGZsb2F0XQp0b2RheS5zdW4gPSAiU3VubnkiCnRvZGF5LnRlbXAgPSAyMi41Cg==</textarea>
