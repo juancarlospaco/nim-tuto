@@ -45,8 +45,9 @@ you can execute <code>nim c -r hello.nim</code> to show the message <code>&quot;
 <hr>
 <h3 id="es">ES</h3>
 <p>Puedes controlar la Inmutabilidad de las variables usando <code>var</code>, <code>let</code> y <code>const</code>.
-Intentar modificar una variable inmmutable devolvera un error como es de esperarse.
-2 underscores seguidos continuos <code>__</code> en los nombes no esta permitidos.</p>
+Intentar modificar una variable inmmutable devolvera un error como es de esperarse.</p>
+<p>2 underscores seguidos continuos <code>__</code> en los nombes no esta permitidos.</p>
+<p>Unicode puede ser usado para nombres de variables y objetos.</p>
 <ul>
 <li><code>var</code> Mutable.</li>
 <li><code>let</code> Inmutable.</li>
@@ -56,8 +57,9 @@ Intentar modificar una variable inmmutable devolvera un error como es de esperar
 <hr>
 <h3 id="en">EN</h3>
 <p>You can control the immutability of variables using <code>var</code>, <code>let</code> and <code>const</code>.
-Trying to modify an inmmutable variable will return an error as expected.
-2 immediate following underscores <code>__</code> on names are not allowed.</p>
+Trying to modify an inmmutable variable will return an error as expected.</p>
+<p>2 immediate following underscores <code>__</code> on names are not allowed.</p>
+<p>Unicode can be used for variable and objet names.</p>
 <ul>
 <li><code>var</code> Mutable.</li>
 <li><code>let</code> Inmutable.</li>
@@ -83,6 +85,60 @@ Trying to modify an inmmutable variable will return an error as expected.
 </ul>
 <p>The DocString Comments can be added anywhere on the code.</p>
 <p>The DocString Comments will be parsed as <a href="https://en.wikipedia.org/wiki/ReStructuredText">ReStructuredText</a> or plain Text.</p>
+</div><div data-file="src/basic_operators.txt" data-title="Operators" class="step"><h1 id="operators">Operators</h1>
+<hr>
+<ul>
+<li><code>=</code> Assign.</li>
+<li><code>+</code> Sum.</li>
+<li><code>-</code> Substract.</li>
+<li><code>*</code> Multiplication.</li>
+<li><code>/</code> Division.</li>
+<li><code>&lt;</code> Smaller than.</li>
+<li><code>&gt;</code> Bigger than.</li>
+<li><code>@</code> Seq.</li>
+<li><code>&amp;</code> Concat.</li>
+<li><code>%</code> Serialization.</li>
+<li><code>|</code> Or.</li>
+<li><code>!</code> Negation.</li>
+<li><code>^</code> Power.</li>
+<li><code>and</code> And.</li>
+<li><code>or</code> Or.</li>
+<li><code>not</code> Not.</li>
+<li><code>xor</code> Xor.</li>
+<li><code>shl</code> Shift Left.</li>
+<li><code>shr</code> Shift Right.</li>
+<li><code>div</code> Division.</li>
+<li><code>mod</code> Module.</li>
+<li><code>in</code> Existence.</li>
+<li><code>notin</code> Not Existence.</li>
+<li>Macros.</li>
+<li>Templates.</li>
+</ul>
+</div><div data-file="src/basic_builtins.nim" data-title="Builtin Keywords" class="step"><h1 id="builtin-keywords">Builtin Keywords</h1>
+<hr>
+<h3 id="es">ES</h3>
+<ul>
+<li><code>discard</code> Ignorar los argumentos, Nim no permite codigo sin usar, se debe ignorar explicitamente.</li>
+<li><code>echo</code> Imprimir los argumentos a la salida standard.</li>
+<li><code>assert</code> Afirmar que los argumentos evaluan booleanamente a verdadero.</li>
+<li><code>import</code> Importar uno o mas modulos Nim.</li>
+<li><code>include</code> Incrustar durante la Compilacion como codigo en el codigo actual los argumentos.</li>
+<li><code>staticRead</code> Leer durante la Compilacion y devolver como string el contenido del archivo argumento.</li>
+<li><code>isMainModule</code> es <code>true</code> cuando el modulo que actualmente estamos ejecutando es el modulo principal.</li>
+</ul>
+<p>Hay algunos mas pero esos son los mas frecuentement usados.</p>
+<hr>
+<h3 id="en">EN</h3>
+<ul>
+<li><code>discard</code> Ignore the arguments, Nim dont allow unused code, it needs to be explicitly ignored.</li>
+<li><code>echo</code> Print the arguments to the standard output.</li>
+<li><code>assert</code> Assert that the arguments evaluate to true.</li>
+<li><code>import</code> Import one or more Nim modules.</li>
+<li><code>include</code> Embed the arguments during compilation as code in the code.</li>
+<li><code>staticRead</code> Read during compilation and return a string the content of the file arguments.</li>
+<li><code>isMainModule</code> is <code>true</code> when the module actually executing is the main module.</li>
+</ul>
+<p>Theres some more but those are the most frequently used.</p>
 </div><div data-file="src/basic_types_boolean.nim" data-title="Boolean" class="step"><h1 id="booleans">Booleans</h1>
 <hr>
 <h3 id="es">ES</h3>
@@ -266,7 +322,7 @@ por ejemplo numeros enteros, si se usa un valor fuera de los limites produce un 
 <p>Subrange type, represents a fixed limited range of items of an specific type,
 eg integer numbers, if a value out of the limits is used it produces an error.</p>
 <p>Think about it like a primitive ordinal type with Maximum and Minimum limits.</p>
-</div><div data-file="src/empty.txt" data-title="Subrange" class="step"><h1 id="subranges">Subranges</h1>
+</div><div data-file="src/basic_types_subranges.nim" data-title="Subrange" class="step"><h1 id="subranges">Subranges</h1>
 <hr>
 <h3 id="es">ES</h3>
 <p>Tipo Subrange, representa un rango limitado fijo de items de un tipo especifico,
@@ -277,9 +333,14 @@ por ejemplo numeros enteros, si se usa un valor fuera de los limites produce un 
 <p>Subrange type, represents a fixed limited range of items of an specific type,
 eg integer numbers, if a value out of the limits is used it produces an error.</p>
 <p>Think about it like a primitive ordinal type with Maximum and Minimum limits.</p>
+</div><div data-file="src/empty.txt" data-title=" " class="step"><h1 id="flow-control">Flow Control</h1>
+<ul>
+<li>Take control with Nim.</li>
+</ul>
+<p><img src="img/cat-butterfly.jpg" alt="Flow"></p>
 </div><div data-file="src/empty.txt" data-title="End" class="step"><h1 id="end">End</h1>
 <hr>
-<p><strong>The end of this tutorial, the start of a new hacking adventure...</strong></p>
+<p><em>The end of this tutorial, the start of a new hacking adventure...</em></p>
 <p><img src="img/stackoverflow-copypaste.jpg" alt="cat tax" title="Happy Hacking!"></p>
 <h5 id="links">Links</h5>
 <ul>
@@ -298,13 +359,17 @@ eg integer numbers, if a value out of the limits is used it produces an error.</
 <li><a href="https://github.com/VPashkov/awesome-nim">Awesome Nim</a>.</li>
 <li><a href="https://github.com/juancarlospaco/nim-tuto#nim-tuto">Nim Tuto</a>.</li>
 </ul>
+<h5 id="author">Author</h5>
 <p>An idea of <a href="https://twitter.com/juancarlospaco">Juan Carlos</a> from <a href="https://www.openstreetmap.org/relation/286393">Argentina</a>.</p>
+<h5 id="license">License</h5>
 <p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike CC-BY-NC-SA 4.0+</a></p>
 </div></div>
 <div class="saurus-files" style="display:none;"><textarea class="saurus-file" data-file="src/empty.txt" data-mode="text">IAo=</textarea>
 <textarea class="saurus-file" data-file="src/hello.nim" data-mode="text">ZWNobyAiSGVsbG8gV29ybGQiCg==</textarea>
 <textarea class="saurus-file" data-file="src/assign_variable.nim" data-mode="text">dmFyIHRoaXNfdmFyaWFibGVfY2FuX2NoYW5nZSA9ICJFc3RhIHZhcmlhYmxlIHB1ZWRlIGNhbWJpYXIiCnRoaXNfdmFyaWFibGVfY2FuX2NoYW5nZSA9ICJmb28gYmFyIGJheiIKCmxldCB0aGlzX3ZhcmlhYmxlX2Nhbl9ub3RfY2hhbmdlID0gIkVzdGEgdmFyaWFibGUgTm8gc2UgcHVlZGUgY2FtYmlhciIKCmNvbnN0IHRoaXNfdmFyaWFibGVfaXNfY29tcGlsZV90aW1lX2NvbnN0YW50ID0gIkNvbnN0YW50ZSBkZSBDb21waWxhY2lvbiIK</textarea>
 <textarea class="saurus-file" data-file="src/comments.nim" data-mode="text">IyAgVGhpcyBpcyBhIENvbW1lbnQsIGlnbm9yZWQgYnkgTmltLgoKIyMgVGhpcyBpcyBhIERvY1N0cmluZyBDb21tZW50LCB1c2VkIGZvciBTZWxmLURvY3VtZW50YXRpb24uCg==</textarea>
+<textarea class="saurus-file" data-file="src/basic_operators.txt" data-mode="text">PSAgICAgKyAgICAgLSAgICAgKiAgICAgLyAgICAgPCAgICAgPgoKQCAgICAgJCAgICAgfiAgICAgJiAgICAgJSAgICAgfAoKISAgICAgPyAgICAgXiAgICAgLiAgICAgOiAgICAgXAoKYW5kIG9yIG5vdCB4b3Igc2hsIHNociBkaXYgbW9kIGluIG5vdGluIGlzIGlzbm90IG9mCg==</textarea>
+<textarea class="saurus-file" data-file="src/basic_builtins.nim" data-mode="text">IAo=</textarea>
 <textarea class="saurus-file" data-file="src/basic_types_boolean.nim" data-mode="text">dmFyIGlzX3RydWUgPSB0cnVlCnZhciBpc19mYWxzZSA9IGZhbHNlCgp2YXIgYW5vdGhlciA9IGJvb2woMSkgICMgdHJ1ZQp2YXIgb3RoZXJzID0gYm9vbCgwKSAgICMgZmFsc2UK</textarea>
 <textarea class="saurus-file" data-file="src/basic_types_string.nim" data-mode="text">IyBTdHJpbmcKdmFyIHN0cmluZ190eXBlID0gIkhlbGxvIFdvcmxkIgp2YXIgd2hpdGVzcGFjZXMgPSAiICIKdmFyIGVtcHR5c3RyaW5nID0gIiIKdmFyIGZveF9zdHJpbmdzID0gIlRoZSBxdWljayBicm93biBmb3gganVtcHMgb3ZlciB0aGUgbGF6eSBkb2ciCgojIFJhdyBzdHJpbmcgbGl0ZXJhbHMgYW5kIE11bHRpbGluZSBzdHJpbmcgbGl0ZXJhbHMKdmFyIHJhd19zdHJpbmdfbGl0ZXJhbCA9IHIiUmF3IHN0cmluZyBsaXRlcmFscyIKdmFyIG11bHRpbGluZV9zdHJpbmcgPSAiIiIKVGhpcyBpcyBhIE11bHRpbGluZSBTdHJpbmcsIG9mIHN0cmluZyB0eXBlLCBpdCBjYW4gaGF2ZSBxdW90ZSBjaGFyYWN0ZXJzIGluc2lkZSwKbGlrZSAnLCAiLCBcbiAsIFxyLCBcYywgXHgwMCwgXHQsIEVtb2ppLCBldGMgd2l0aG91dCBwcm9kdWNpbmcgYW55IGVycm9ycy4gOikKIiIiCgojIENoYXIKdmFyIGNoYXJfdHlwZSA9ICdhJwp2YXIgd2hpdGVzcGFjZSA9ICcgJwp2YXIgYW5vdGhlciA9ICc5Jwo=</textarea>
 <textarea class="saurus-file" data-file="src/basic_types_integers.nim" data-mode="text">dmFyIGlzX3plcm8gPSAwCnZhciBpbnRlZ2VyX3R5cGUgPSA0Mgp2YXIgbmVnYXRpdmVfaW50ID0gLTY2Ngp2YXIgYmlnX2ludGVnZXIgPSAyXzE0N180ODNfNjQ3ICAjIF8gYXJlIGlnbm9yZWQsIGxpa2Ugb24gUHl0aG9uLgoKdmFyIGludGVnZXIgPSBpbnQoMTIzKSAgIyBpbnQ2NCBvbiA2NGJpdCBDUFUsIGludDMyIG9uIDMyYml0IENQVQoKdmFyIGludGVnZXJfOGJpdHMgPSBpbnQ4KDEyMykKdmFyIGludGVnZXJfMTZiaXRzID0gaW50MTYoMTIzKQp2YXIgaW50ZWdlcl8zMmJpdHMgPSBpbnQzMigxMjMpCnZhciBpbnRlZ2VyXzY0Yml0cyA9IGludDY0KDEyMykKCnZhciBub3JtYWxfaW50ZWdlciA9IDI1NSAgICAgICAgICMgMjU1CnZhciBiaW5hcnlfaW50ZWdlciA9IDBiMTExMTExMTEgICMgMjU1CnZhciBvY3RhbF9pbnRlZ2VyID0gMG8zNzcgICAgICAgICMgMjU1CnZhciBoZXhhX2ludGVnZXIgPSAweGZmICAgICAgICAgICMgMjU1Cg==</textarea>

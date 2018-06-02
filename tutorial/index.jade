@@ -65,7 +65,10 @@
 
       Puedes controlar la Inmutabilidad de las variables usando `var`, `let` y `const`.
       Intentar modificar una variable inmmutable devolvera un error como es de esperarse.
+
       2 underscores seguidos continuos `__` en los nombes no esta permitidos.
+
+      Unicode puede ser usado para nombres de variables y objetos.
 
       - `var` Mutable.
       - `let` Inmutable.
@@ -79,7 +82,10 @@
 
       You can control the immutability of variables using `var`, `let` and `const`.
       Trying to modify an inmmutable variable will return an error as expected.
+
       2 immediate following underscores `__` on names are not allowed.
+
+      Unicode can be used for variable and objet names.
 
       - `var` Mutable.
       - `let` Inmutable.
@@ -118,6 +124,74 @@
       The DocString Comments can be added anywhere on the code.
 
       The DocString Comments will be parsed as [ReStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) or plain Text.
+
+
+
+  .step(data-file='src/basic_operators.txt', data-title='Operators')
+    :markdown
+      # Operators
+
+      ---
+
+      - `=` Assign.
+      - `+` Sum.
+      - `-` Substract.
+      - `*` Multiplication.
+      - `/` Division.
+      - `<` Smaller than.
+      - `>` Bigger than.
+      - `@` Seq.
+      - `&` Concat.
+      - `%` Serialization.
+      - `|` Or.
+      - `!` Negation.
+      - `^` Power.
+      - `and` And.
+      - `or` Or.
+      - `not` Not.
+      - `xor` Xor.
+      - `shl` Shift Left.
+      - `shr` Shift Right.
+      - `div` Division.
+      - `mod` Module.
+      - `in` Existence.
+      - `notin` Not Existence.
+      - Macros.
+      - Templates.
+
+
+
+  .step(data-file='src/basic_builtins.nim', data-title='Builtin Keywords')
+    :markdown
+      # Builtin Keywords
+
+      ---
+
+      ### ES
+
+      - `discard` Ignorar los argumentos, Nim no permite codigo sin usar, se debe ignorar explicitamente.
+      - `echo` Imprimir los argumentos a la salida standard.
+      - `assert` Afirmar que los argumentos evaluan booleanamente a verdadero.
+      - `import` Importar uno o mas modulos Nim.
+      - `include` Incrustar durante la Compilacion como codigo en el codigo actual los argumentos.
+      - `staticRead` Leer durante la Compilacion y devolver como string el contenido del archivo argumento.
+      - `isMainModule` es `true` cuando el modulo que actualmente estamos ejecutando es el modulo principal.
+
+      Hay algunos mas pero esos son los mas frecuentement usados.
+
+      ---
+
+      ### EN
+
+      - `discard` Ignore the arguments, Nim dont allow unused code, it needs to be explicitly ignored.
+      - `echo` Print the arguments to the standard output.
+      - `assert` Assert that the arguments evaluate to true.
+      - `import` Import one or more Nim modules.
+      - `include` Embed the arguments during compilation as code in the code.
+      - `staticRead` Read during compilation and return a string the content of the file arguments.
+      - `isMainModule` is `true` when the module actually executing is the main module.
+
+      Theres some more but those are the most frequently used.
 
 
 
@@ -417,14 +491,42 @@
 
 
 
+  .step(data-file='src/basic_types_subranges.nim', data-title='Subrange')
+    :markdown
+      # Subranges
+
+      ---
+
+      ### ES
+
+      Tipo Subrange, representa un rango limitado fijo de items de un tipo especifico,
+      por ejemplo numeros enteros, si se usa un valor fuera de los limites produce un error.
+
+      Pensalo como un tipo ordinal primitivo con limites Maximos y Minimos.
+
+      ---
+
+      ### EN
+
+      Subrange type, represents a fixed limited range of items of an specific type,
+      eg integer numbers, if a value out of the limits is used it produces an error.
+
+      Think about it like a primitive ordinal type with Maximum and Minimum limits.
 
 
 
-  .step(data-file='src/empty.txt', data-title='Subrange')
+
+
+
+
+
+  .step(data-file='src/empty.txt', data-title=' ')
     :markdown
       # Flow Control
 
-      ![Flow]()
+      - Take control with Nim.
+
+      ![Flow](img/cat-butterfly.jpg)
 
 
 
@@ -434,7 +536,7 @@
 
       ---
 
-      **The end of this tutorial, the start of a new hacking adventure...**
+      *The end of this tutorial, the start of a new hacking adventure...*
 
       ![cat tax](img/stackoverflow-copypaste.jpg "Happy Hacking!")
 
@@ -455,6 +557,10 @@
       - [Awesome Nim](https://github.com/VPashkov/awesome-nim).
       - [Nim Tuto](https://github.com/juancarlospaco/nim-tuto#nim-tuto).
 
+      ##### Author
+
       An idea of [Juan Carlos](https://twitter.com/juancarlospaco) from [Argentina](https://www.openstreetmap.org/relation/286393).
+
+      ##### License
 
       [Creative Commons Attribution-NonCommercial-ShareAlike CC-BY-NC-SA 4.0+](https://creativecommons.org/licenses/by-nc-sa/4.0/)
