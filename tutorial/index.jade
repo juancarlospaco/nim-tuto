@@ -1,7 +1,20 @@
 .chapter(data-title='Nim Tuto')
+
+  .step(data-title='Welcome')
+    :markdown
+      # Nim Tutorial !
+
+      ![welcome](img/cat-butterfly.jpg)
+
+
+
   .step(data-file='src/hello.nim', data-highlight='1', data-title='Hello World')
     :markdown
-      # ES
+      # Hello World
+
+      ---
+
+      ### ES
 
       Bienvenidas al Tutorial de [Nim](https://nim-lang.org)!.
 
@@ -10,7 +23,9 @@
       Este tutorial asume que ya tenes [Nim instalado en tu computadora](https://nim-lang.org/install.html)
       sino puedes [probar Nim desde el navegador](https://play.nim-lang.org).
 
-      Como todo tutorial empieza con un "Hola Mundo",
+      ![play nim](img/nim-play.png "Hello World corriendo en Nim Play desde el navegador")
+
+      Como todo tutorial empieza con un "Hola Mundo", `echo` imprime los argumentos a la salida estandard,
       puedes ejecutar `nim c -r hello.nim` para mostrar el mensaje `"Hello World"` en la terminal.
 
       - Clickea la flecha derecha para avanzar.
@@ -19,7 +34,7 @@
 
       ---
 
-      # EN
+      ### EN
 
       Welcome to the [Nim](https://nim-lang.org) Tutorial!.
 
@@ -28,7 +43,10 @@
       This tutorial assumes that you already have [Nim installed on your computer](https://nim-lang.org/install.html)
       else you can [try Nim from the browser](https://play.nim-lang.org).
 
+      ![play nim](img/nim-play.png "Hello World running on Nim Play from the browser")
+
       Like all tutorials it starts with a "Hello World",
+      `echo` prints the arguments to the standard output,
       you can execute `nim c -r hello.nim` to show the message `"Hello World"` on the terminal.
 
       - Click the right arrow to advance.
@@ -37,12 +55,16 @@
 
 
 
-
   .step(data-file='src/assign_variable.nim', data-title='Variables')
     :markdown
-      # ES
+      # Variables
+
+      ---
+
+      ### ES
 
       Puedes controlar la Inmutabilidad de las variables usando `var`, `let` y `const`.
+      Intentar modificar una variable inmmutable devolvera un error como es de esperarse.
 
       - `var` Mutable.
       - `let` Inmutable.
@@ -52,9 +74,10 @@
 
       ---
 
-      # EN
+      ### EN
 
       You can control the immutability of variables using `var`, `let` and `const`.
+      Trying to modify an inmmutable variable will return an error as expected.
 
       - `var` Mutable.
       - `let` Inmutable.
@@ -64,10 +87,13 @@
 
 
 
-
   .step(data-file='src/comments.nim', data-title='Comments')
     :markdown
-      # ES
+      # Comments
+
+      ---
+
+      ### ES
 
       Comentarios de codigo empiezan con `#` o `##`.
 
@@ -80,7 +106,7 @@
 
       ---
 
-      # EN
+      ### EN
 
       Code comments start with `#` or `##`.
 
@@ -93,10 +119,13 @@
 
 
 
-
   .step(data-file='src/basic_types_boolean.nim', data-title='Boolean')
     :markdown
-      # ES
+      # Booleans
+
+      ---
+
+      ### ES
 
       Tipo Booleano, representa verdadero o falso.
 
@@ -106,7 +135,7 @@
 
       ---
 
-      # EN
+      ### EN
 
       Boolean type, represents true or false.
 
@@ -116,10 +145,13 @@
 
 
 
-
   .step(data-file='src/basic_types_string.nim', data-title='String & Char')
     :markdown
-      # ES
+      # Strings & Chars
+
+      ---
+
+      ### ES
 
       ##### String
 
@@ -141,7 +173,7 @@
 
       ---
 
-      # EN
+      ### EN
 
       ##### String
 
@@ -163,17 +195,21 @@
 
 
 
-
   .step(data-file='src/basic_types_integers.nim', data-title='Integers')
     :markdown
-      # ES
+      # Integers
+
+      ---
+
+      ### ES
 
       Tipo Entero, representa un numero entero, positivo o negativo.
 
       Existen varias medidas de enteros y una medida de entero por defecto,
       dependiendo de cuantos bits se usa para representarlos internamente,
       los enteros chicos usan menos menos recursos y son mas rapidos,
-      los enteros grandes pueden acomodar numeros mucho mas grandes.
+      los enteros grandes pueden acomodar numeros mucho mas grandes,
+      `_` es ignorado y es util para formatear de manera amigable un numero largo.
 
       - Literal siempre genera un `int`.
       - `int` es `int64` en CPU de 64bits, es `int32` en CPU de 32bits.
@@ -186,14 +222,15 @@
 
       ---
 
-      # EN
+      ### EN
 
       Integer type, represents an integer number, positive o negative.
 
       Theres multiple sizes of integers and one default integer size,
       they depend on how many it they use to be represented internally,
       the smaller integers use less resources and they are faster,
-      the bigger integer can hold bigger integer numbers.
+      the bigger integer can hold bigger integer numbers.,
+      `_` is ignored and is useful for human-friendly formatting for long numbers.
 
       - Literals always generate an `int`.
       - `int` is `int64` on 64bits CPU, `int32` on 32bits CPU.
@@ -206,10 +243,13 @@
 
 
 
-
   .step(data-file='src/basic_types_floats.nim', data-title='Floats')
     :markdown
-      # ES
+      # Floats
+
+      ---
+
+      ### ES
 
       Tipo Flotante, representa un numero de punto flotante, positivo o negativo.
 
@@ -225,7 +265,7 @@
 
       ---
 
-      # EN
+      ### EN
 
       Float type, represents an floating point number, positive o negative.
 
@@ -241,10 +281,13 @@
 
 
 
-
   .step(data-file='src/basic_types_tuples.nim', data-title='Tuples')
     :markdown
-      # ES
+      # Tuples
+
+      ---
+
+      ### ES
 
       Tipo Tupla, representa una secuencia de objetos ordenados por un numero de indice,
       es inmutable, de solo lectura, cada item tiene un nombre.
@@ -257,11 +300,13 @@
       Las tuplas pueden tener tuplas dentro.
 
       La tupla se puede usar de manera simple, solo construyendola con los items `(1, 2, 3)` o
-      puede usarse declarando previamente un tipo `type NombreDeLaTupla = tuple[nombre: tipo, nombre: tipo]`
+      puede usarse declarando previamente un tipo:
+
+      `type NombreDeLaTupla = tuple[nombre: tipo, nombre: tipo]`
 
       ---
 
-      # EN
+      ### EN
 
       Tuple type, represents an sequence of objects ordered by an index number,
       its inmmutable, kinda read-only, each item has a name.
@@ -274,9 +319,95 @@
       Tuples can contain tuples inside.
 
       The tuple can be used on a simple way, just constructing it with the items `(1, 2, 3)` or
-      can be used declaring a tuple type `type TupleName = tuple[name: type, name: type]`
+      can be used declaring a tuple type:
+
+      `type TupleName = tuple[name: type, name: type]`
 
 
+
+  .step(data-file='src/basic_types_array.nim', data-title='Arrays & Seqs')
+    :markdown
+      # Arrays & Seqs
+
+      ---
+
+      ### ES
+
+      ##### Array
+
+      Tipo Array, representa una secuencia de longuitud fija de objetos del mismo
+      tipo ordenados por un numero de indice, es mutable,
+      sus items se pueden cambiar, no puede crecer o reducir su longuitud total,
+      devolvera error si se intenta expandir agregando mas items,
+      devolvera error si se intenta reducir sacandole items.
+
+      Los arrays pueden tener items de muchos tipos dentro, incluido
+      object, char, string, float, bool, tuple, array, set, seq, etc.
+
+      ##### Seq
+
+      Tipo Seq, representa una secuencia de longuitud variable de objetos del mismo
+      tipo ordenados por un numero de indice, es mutable,
+      sus items se pueden cambiar, puede crecer o reducir su longuitud total,
+      se puede expandir agregando mas items y reducir sacandole items.
+
+      Los seq pueden tener items de muchos tipos dentro, incluido
+      object, char, string, float, bool, tuple, array, set, seq, etc.
+
+      El seq se puede usar de manera simple solo construyendolo con los items `@[1, 2, 3]`,
+      el constructor es el literal `@[]`, o puede usarse declarando previamente:
+
+      `var some_seq = seq[int]` int is the tipo de los items.
+
+      ---
+
+      ### EN
+
+      ##### Array
+
+      Array type, represents a sequence of fixed lenght of objects of
+      the same type ordered by an index number, its mutable,
+      its items can change, it can not grow or shrink its total lenght,
+      will return error if try to expand adding more items,
+      will return error if try to shrink taking items.
+
+      Arrays can have items of several types inside, incluiding
+      object, char, string, float, bool, tuple, array, set, seq, etc.
+
+      ##### Seq
+
+      Seq type, represents a sequence of variable lenght of objects of
+      the same type ordered by an index number, its mutable,
+      its items can change, it can grow and shrink its total lenght,
+      it can expand adding more items and shrink taking items.
+
+      Arrays can have items of several types inside, incluiding
+      object, char, string, float, bool, tuple, array, set, seq, etc.
+
+      Seq can be used on a simple way just constructing it with the items `@[1, 2, 3]`,
+      the constructor is the literal `@[]`, or can be used declaring previously:
+
+      `var some_seq = seq[int]` int its the type of the items.
+
+
+
+  .step(data-file='src/basic_types_subranges.nim', data-title='Subrange')
+    :markdown
+      # Subranges
+
+      ---
+
+      ### ES
+
+      Tipo Subrange, representa un rango limitado fijo de items de un tipo especifico,
+      por ejemplo numeros enteros, si se usa un valor fuera de los limites produce un error.
+
+      ---
+
+      ### EN
+
+      Subrange type, represents a fixed limited range of items of an specific type,
+      eg integer numbers, if a value out of the limits is used it produces an error.
 
 
 
@@ -285,11 +416,15 @@
 
   .step(data-title='End')
     :markdown
-      ## This is the beginning, is not the end...
+      # End
 
+      ---
 
+      **The end of this tutorial, the start of a new hacking adventure...**
 
-      ### Links
+      ![cat tax](img/stackoverflow-copypaste.jpg "Happy Hacking!")
+
+      ##### Links
 
       - [Nim Homepage](https://nim-lang.org).
       - [Nimble](https://nimble.directory).
@@ -305,5 +440,7 @@
       - [Nim Rosetta](http://rosettacode.org/wiki/Category:Nim).
       - [Awesome Nim](https://github.com/VPashkov/awesome-nim).
       - [Nim Tuto](https://github.com/juancarlospaco/nim-tuto#nim-tuto).
+
+      An idea of [Juan Carlos](https://twitter.com/juancarlospaco) from [Argentina](https://www.openstreetmap.org/relation/286393).
 
       [Creative Commons Attribution-NonCommercial-ShareAlike CC-BY-NC-SA 4.0+](https://creativecommons.org/licenses/by-nc-sa/4.0/)
