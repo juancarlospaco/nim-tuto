@@ -156,6 +156,9 @@
       - `mod` Module.
       - `in` Existence.
       - `notin` Not Existence.
+      - `type` Type Declaration.
+      - `repr` String Representation.
+      - `addr` Memory Address.
       - Macros.
       - Templates.
 
@@ -499,27 +502,45 @@
 
       ### ES
 
-      Tipo Subrange, representa un rango limitado fijo de items de un tipo especifico,
-      por ejemplo numeros enteros, si se usa un valor fuera de los limites produce un error.
+      Set representa un conjunto de items unicos de un tipo ordinal.
+      Set puede contener `int`, `char`, `bool`, etc.
 
-      Pensalo como un tipo ordinal primitivo con limites Maximos y Minimos.
-
-      Da un gran control al desarrollador de una forma muy simple.
+      | Operation      | Description                                      |
+      |----------------|--------------------------------------------------|
+      | A + B          | Union de dos sets                                |
+      | A * B          | Interseccion de dos sets                         |
+      | A - B          | Diferencia de dos sets (A sin elementos de B)    |
+      | A == B         | Set igualdad                                     |
+      | A <= B         | Relacion subset (A es subset de B o igual a B)   |
+      | A < B          | Relacion subset fuerte (A es un subset de B)     |
+      | e in A         | Membresia de set (A contiene el elemento e)      |
+      | e notin A      | A no contiene el elemento e                      |
+      | contains(A, e) | A contiene el elemento e                         |
+      | card(A)        | Cardinalidad de A (nummero de elementos en A)    |
+      | incl(A, elem)  | Lo mismo que A = A + {elem}                           |
+      | excl(A, elem)  | Lo mismo que A = A - {elem}                           |
 
       ---
 
       ### EN
 
-      Subrange type, represents a fixed limited range of items of an specific type,
-      eg integer numbers, if a value out of the limits is used it produces an error.
+      Set represents a set of de unique items of an ordinal type.
+      Set can contain `int`, `char`, `bool`, etc.
 
-      Think about it like a primitive ordinal type with Maximum and Minimum limits.
-
-      It gives great control to the developer on a simple way.
-
-
-
-
+      | Operation      | Description                                      |
+      |----------------|--------------------------------------------------|
+      | A + B          | Union of two sets                                |
+      | A * B          | Intersection of two sets                         |
+      | A - B          | Difference of two sets (A without B elements)    |
+      | A == B         | Set equality                                     |
+      | A <= B         | Subset relation (A is subset of B or equal to B) |
+      | A < B          | Strong subset relation (A is a real subset of B) |
+      | e in A         | Set membership (A contains element e)            |
+      | e notin A      | A does not contain element e                     |
+      | contains(A, e) | A contains element e                             |
+      | card(A)        | Cardinality of A (number of elements in A)       |
+      | incl(A, elem)  | Same as A = A + {elem}                           |
+      | excl(A, elem)  | Same as A = A - {elem}                           |
 
 
 
@@ -530,6 +551,73 @@
       - Take control with Nim.
 
       ![Flow](img/cat-butterfly.jpg)
+
+
+
+  .step(data-file='src/functions.nim', data-title='Functions')
+    :markdown
+      # Functions
+
+      ---
+
+      ### ES
+
+      ##### Funciones
+
+      Las funciones son bloques de codigo ejecutables, reciben argumentos y retornan un resultado.
+
+      ##### Lambdas
+
+      Otro tipo de funcion son las Funciones Anonimas, tambien llamadas Lambda,
+      en Nim una funcion anonima es igual a una funcion normal pero omitiendo el nombre de la funcion.
+
+      ##### Funcion Arrow
+
+      Otra forma corta de escribir una funcion es una funcion Arrow `->` y `=>`,
+      mas popular en otros lenguajes como JavaScript,
+      en Nim las Arrow Functions se encuentran en el modulo `future`,
+      para usar la sintaxis es necesario importar el modulo `future`.
+
+      ---
+
+      ### EN
+
+      ##### Functions
+
+      The functions are blocks of executable code, receives arguments and return a result.
+
+      ##### Lambdas
+
+      Other kind of function are Anonimous Functions, also called Lambda,
+      on Nim an Anonimous Functions is like a normal function but omitting the name of the function.
+
+      ##### Arrow functions
+
+      Other way of short shape of writing a function is an Arrow function `->` y `=>`,
+      more popular on other languages like JavaScript,
+      on Nim the Arrow Functions are on the `future` module,
+      to use the syntax is required to  import the `future` module.
+
+
+
+  .step(data-file='src/basic_types_varargs.nim', data-title='Varargs')
+    :markdown
+      # Varargs
+
+      ---
+
+      ### ES
+
+
+      ---
+
+      ### EN
+
+
+
+
+
+
 
 
 

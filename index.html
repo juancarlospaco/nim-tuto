@@ -9,7 +9,7 @@
 .wrapper {
   height:100%;
   width:100%;
-}</style><link rel="shortcut icon" href="//twilio.com/bundles/marketing/img/favicons/favicon.ico"><link rel="apple-touch-icon" href="//twilio.com/bundles/marketing/img/favicons/favicon_57.png"><link rel="apple-touch-icon" sizes="72x72" href="//twilio.com/bundles/marketing/img/favicons/favicon_72.png"><link rel="apple-touch-icon" sizes="114x114" href="//twilio.com/bundles/marketing/img/favicons/favicon_114.png"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"><link rel="stylesheet" href="viewsaurus.css"></head><body><div class="wrapper"><div id="viewsaurus" data-title="Nim Tuto"><div class="saurus-panes"><div class="saurus-prose"><div class="saurus-prose-header"><div class="title-outer"><span class="step-title">Nim Tuto</span></div></div><div class="saurus-nav-buttons"><div class="saurus-nav-button nav-overview"><div class="saurus-nav-button-inner"><i class="fa fa-fw fa-list"></i></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-previous"><div class="saurus-nav-button-inner"><a href=""> <i class="fa fa-fw fa-play fa-rotate-180"></i></a></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-next clickable"><div class="saurus-nav-button-inner"><a href="#1"> <i class="fa fa-fw fa-play"></i></a></div></div><div class="saurus-next-title"><span class="next-title-inner"></span></div></div><div class="saurus-progress-bar"></div><div class="saurus-start"><p>Learn how to use Nim!.</p><a href="#0">Start Tutorial</a></div><div class="saurus-content"><div data-file="src/empty.txt" data-title="Nim Tuto" class="chapter"><div data-title="Welcome" class="step"><h1 id="nim-tutorial-">Nim Tutorial !</h1>
+}</style><link rel="shortcut icon" href="//twilio.com/bundles/marketing/img/favicons/favicon.ico"><link rel="apple-touch-icon" href="//twilio.com/bundles/marketing/img/favicons/favicon_57.png"><link rel="apple-touch-icon" sizes="72x72" href="//twilio.com/bundles/marketing/img/favicons/favicon_72.png"><link rel="apple-touch-icon" sizes="114x114" href="//twilio.com/bundles/marketing/img/favicons/favicon_114.png"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"><link rel="stylesheet" href="viewsaurus.css"></head><body><div class="wrapper"><div id="viewsaurus" data-title="Nim Tuto"><div class="saurus-panes"><div class="saurus-prose"><div class="saurus-prose-header"><div class="title-outer"><span class="step-title">Nim Tuto</span></div></div><div class="saurus-nav-buttons"><div class="saurus-nav-button nav-overview"><div class="saurus-nav-button-inner"><i class="fa fa-fw fa-list"></i></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-previous"><div class="saurus-nav-button-inner"><a href=""> <i class="fa fa-fw fa-play fa-rotate-180"></i></a></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-next clickable"><div class="saurus-nav-button-inner"><a href="#1"> <i class="fa fa-fw fa-play"></i></a></div></div><div class="saurus-next-title"><span class="next-title-inner"></span></div></div><div class="saurus-progress-bar"></div><div class="saurus-start"><p>Learn how to use Nim!.</p><a href="#0">Start Tutorial</a></div><div class="saurus-content"><div data-file="src/empty.txt" data-title="Nim Tuto" class="chapter"><div data-title=" " class="step"><h1 id="nim-tutorial-">Nim Tutorial !</h1>
 <p><img src="img/cat-butterfly.jpg" alt="welcome"></p>
 </div><div data-file="src/hello.nim" data-highlight="1" data-title="Hello World" class="step"><h1 id="hello-world">Hello World</h1>
 <hr>
@@ -111,6 +111,9 @@ Trying to modify an inmmutable variable will return an error as expected.</p>
 <li><code>mod</code> Module.</li>
 <li><code>in</code> Existence.</li>
 <li><code>notin</code> Not Existence.</li>
+<li><code>type</code> Type Declaration.</li>
+<li><code>repr</code> String Representation.</li>
+<li><code>addr</code> Memory Address.</li>
 <li>Macros.</li>
 <li>Templates.</li>
 </ul>
@@ -322,22 +325,160 @@ por ejemplo numeros enteros, si se usa un valor fuera de los limites produce un 
 <p>Subrange type, represents a fixed limited range of items of an specific type,
 eg integer numbers, if a value out of the limits is used it produces an error.</p>
 <p>Think about it like a primitive ordinal type with Maximum and Minimum limits.</p>
-</div><div data-file="src/basic_types_subranges.nim" data-title="Subrange" class="step"><h1 id="subranges">Subranges</h1>
+</div><div data-file="src/basic_types_sets.nim" data-title="Set" class="step"><h1 id="sets">Sets</h1>
 <hr>
 <h3 id="es">ES</h3>
-<p>Tipo Subrange, representa un rango limitado fijo de items de un tipo especifico,
-por ejemplo numeros enteros, si se usa un valor fuera de los limites produce un error.</p>
-<p>Pensalo como un tipo ordinal primitivo con limites Maximos y Minimos.</p>
+<p>Set representa un conjunto de items unicos de un tipo ordinal.
+Set puede contener <code>int</code>, <code>char</code>, <code>bool</code>, etc.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A + B</td>
+<td>Union de dos sets</td>
+</tr>
+<tr>
+<td>A * B</td>
+<td>Interseccion de dos sets</td>
+</tr>
+<tr>
+<td>A - B</td>
+<td>Diferencia de dos sets (A sin elementos de B)</td>
+</tr>
+<tr>
+<td>A == B</td>
+<td>Set igualdad</td>
+</tr>
+<tr>
+<td>A &lt;= B</td>
+<td>Relacion subset (A es subset de B o igual a B)</td>
+</tr>
+<tr>
+<td>A &lt; B</td>
+<td>Relacion subset fuerte (A es un subset de B)</td>
+</tr>
+<tr>
+<td>e in A</td>
+<td>Membresia de set (A contiene el elemento e)</td>
+</tr>
+<tr>
+<td>e notin A</td>
+<td>A no contiene el elemento e</td>
+</tr>
+<tr>
+<td>contains(A, e)</td>
+<td>A contiene el elemento e</td>
+</tr>
+<tr>
+<td>card(A)</td>
+<td>Cardinalidad de A (nummero de elementos en A)</td>
+</tr>
+<tr>
+<td>incl(A, elem)</td>
+<td>Lo mismo que A = A + {elem}</td>
+</tr>
+<tr>
+<td>excl(A, elem)</td>
+<td>Lo mismo que A = A - {elem}</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h3 id="en">EN</h3>
-<p>Subrange type, represents a fixed limited range of items of an specific type,
-eg integer numbers, if a value out of the limits is used it produces an error.</p>
-<p>Think about it like a primitive ordinal type with Maximum and Minimum limits.</p>
+<p>Set represents a set of de unique items of an ordinal type.
+Set can contain <code>int</code>, <code>char</code>, <code>bool</code>, etc.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A + B</td>
+<td>Union of two sets</td>
+</tr>
+<tr>
+<td>A * B</td>
+<td>Intersection of two sets</td>
+</tr>
+<tr>
+<td>A - B</td>
+<td>Difference of two sets (A without B elements)</td>
+</tr>
+<tr>
+<td>A == B</td>
+<td>Set equality</td>
+</tr>
+<tr>
+<td>A &lt;= B</td>
+<td>Subset relation (A is subset of B or equal to B)</td>
+</tr>
+<tr>
+<td>A &lt; B</td>
+<td>Strong subset relation (A is a real subset of B)</td>
+</tr>
+<tr>
+<td>e in A</td>
+<td>Set membership (A contains element e)</td>
+</tr>
+<tr>
+<td>e notin A</td>
+<td>A does not contain element e</td>
+</tr>
+<tr>
+<td>contains(A, e)</td>
+<td>A contains element e</td>
+</tr>
+<tr>
+<td>card(A)</td>
+<td>Cardinality of A (number of elements in A)</td>
+</tr>
+<tr>
+<td>incl(A, elem)</td>
+<td>Same as A = A + {elem}</td>
+</tr>
+<tr>
+<td>excl(A, elem)</td>
+<td>Same as A = A - {elem}</td>
+</tr>
+</tbody>
+</table>
 </div><div data-file="src/empty.txt" data-title=" " class="step"><h1 id="flow-control">Flow Control</h1>
 <ul>
 <li>Take control with Nim.</li>
 </ul>
 <p><img src="img/cat-butterfly.jpg" alt="Flow"></p>
+</div><div data-file="src/functions.nim" data-title="Functions" class="step"><h1 id="functions">Functions</h1>
+<hr>
+<h3 id="es">ES</h3>
+<p>Las funciones son bloques de codigo ejecutables, reciben argumentos y retornan un resultado.</p>
+<p>Otro tipo de funcion son las Funciones Anonimas, tambien llamadas Lambda,
+en Nim una funcion anonima es igual a una funcion normal pero omitiendo el nombre de la funcion.</p>
+<p>Otra forma corta de escribir una funcion es una funcion Arrow <code>-&gt;</code> y <code>=&gt;</code>,
+mas popular en otros lenguajes como JavaScript,
+en Nim las Arrow Functions se encuentran en el modulo <code>future</code>,
+para usar la sintaxis es necesario importar el modulo <code>future</code>.</p>
+<hr>
+<h3 id="en">EN</h3>
+<p>The functions are blocks of executable code, receives arguments and return a result.</p>
+<p>Other kind of function are Anonimous Functions, also called Lambda,
+on Nim an Anonimous Functions is like a normal function but omitting the name of the function.</p>
+<p>Other way of short shape of writing a function is an Arrow function <code>-&gt;</code> y <code>=&gt;</code>,
+more popular on other languages like JavaScript,
+on Nim the Arrow Functions are on the <code>future</code> module,
+to use the syntax is required to  import the <code>future</code> module.</p>
+</div><div data-file="src/basic_types_varargs.nim" data-title="Varargs" class="step"><h1 id="varargs">Varargs</h1>
+<hr>
+<h3 id="es">ES</h3>
+<hr>
+<h3 id="en">EN</h3>
 </div><div data-file="src/empty.txt" data-title="End" class="step"><h1 id="end">End</h1>
 <hr>
 <p><em>The end of this tutorial, the start of a new hacking adventure...</em></p>
@@ -377,5 +518,8 @@ eg integer numbers, if a value out of the limits is used it produces an error.</
 <textarea class="saurus-file" data-file="src/basic_types_tuples.nim" data-mode="text">dmFyIHR1cGxlX3R5cGUgPSAoMSwgMiwgMywgNCkgICMgUXVpY2sgdXNlLgoKIyBEZWNsYXJpbmcgYSBuZXcgVHVwbGUgdHlwZSwgd2l0aCBpdGVtcyBuYW1lcyBhbmQgdHlwZXMuCnR5cGUgUGVyc29uID0gdHVwbGVbbmFtZTogc3RyaW5nLCBhZ2U6IGludCwgYWN0aXZlOiBib29sXQoKIyBVc2luZyB0aGUgZGVjbGFyZWQgdHVwbGUuCnZhciBzb21ldHVwbGU6IFBlcnNvbiA9IChuYW1lOiAiTGVvIFRodXptZXlsIiwgYWdlOiAyNSwgYWN0aXZlOiB0cnVlKQoKdmFyIGNoaWxkOiB0dXBsZVtuYW1lOiBzdHJpbmcsIGFnZTogaW50XQpjaGlsZCA9IChuYW1lOiAiUnVkaWdlciIsIGFnZTogMikKCnZhciB0b2RheTogdHVwbGVbc3VuOiBzdHJpbmcsIHRlbXA6IGZsb2F0XQp0b2RheS5zdW4gPSAiU3VubnkiCnRvZGF5LnRlbXAgPSAyMi41Cg==</textarea>
 <textarea class="saurus-file" data-file="src/basic_types_array.nim" data-mode="text">IyBBcnJheQp2YXIgYXJyYXlfb2ZfaW50ID0gWzEsIDIsIDNdCnZhciBhcnJheV9vZl9mbG9hdCA9IFsxLjAsIDIuMCwgMy4wXQp2YXIgYXJyYXlfb2ZfY2hhciA9IFsnYScsICdiJywgJ2MnXQp2YXIgYXJyYXlfb2Zfc3RyaW5nID0gWyJhIiwgImIiLCAiYyJdCnZhciBhcnJheV9vZl9ib29sID0gW3RydWUsIGZhbHNlLCB0cnVlXQp2YXIgYXJyYXlfb2ZfdHVwbGUgPSBbKDEsIDIpLCAoMywgNCksICg1LCA2KV0KdmFyIGFycmF5X29mX2FycmF5ID0gW1sxLCAyXSwgWzMsIDRdXQp2YXIgYXJyYXlfb2Zfc2VxID0gW0BbMSwgMl0sIEBbMywgNF1dCnZhciBhcnJheV9vZl9zZXQgPSBbezEsIDJ9LCB7MywgNH0sIHs1LCA2fV0KCiMgU2VxCnZhciBzZXFfb2ZfaW50ID0gQFsxLCAyLCAzXQp2YXIgc2VxX29mX2Zsb2F0ID0gQFsxLjAsIDIuMCwgMy4wXQp2YXIgc2VxX29mX2NoYXIgPSBAWydhJywgJ2InLCAnYyddCnZhciBzZXFfb2Zfc3RyaW5nID0gQFsiYSIsICJiIiwgImMiXQp2YXIgc2VxX29mX2Jvb2wgPSBAW3RydWUsIGZhbHNlLCB0cnVlXQp2YXIgc2VxX29mX3R1cGxlID0gQFsoMSwgMiksICgzLCA0KSwgKDUsIDYpXQp2YXIgc2VxX29mX2FycmF5ID0gQFtbMSwgMl0sIFszLCA0XV0KdmFyIHNlcV9vZl9zZXEgPSBAW0BbMSwgMl0sIEBbMywgNF1dCnZhciBzZXFfb2Zfc2V0ID0gQFt7MSwgMn0sIHszLCA0fSwgezUsIDZ9XQoKc2VxX29mX3N0cmluZy5hZGQoIk5ldyBJdGVtIikgICMgQWRkcyAxIGl0ZW0sIGdyb3dzIHRoZSBzZXEuCg==</textarea>
 <textarea class="saurus-file" data-file="src/basic_types_subranges.nim" data-mode="text">CnR5cGUgRGllRmFjZXMgPSByYW5nZVsxLi4yMF0gICMgT25seSBpbnQgZnJvbSAxIHRvIDIwIGlzIGEgdmFsaWQgdmFsdWUKCnZhciBteV9yb2xsOiBEaWVGYWNlcyA9IDE1CgpteV9yb2xsID0gMiAgICMgT2sKbXlfcm9sbCA9IDE1ICAjIE9rCm15X3JvbGwgPSAxOSAgIyBPawoKbXlfcm9sbCA9IDIxICAjIEVycm9yIQpteV9yb2xsID0gMCAgICMgRXJyb3IhCm15X3JvbGwgPSAtMSAgIyBFcnJvciEK</textarea>
+<textarea class="saurus-file" data-file="src/basic_types_sets.nim" data-mode="text">dHlwZSBDaGFyU2V0ID0gc2V0W2NoYXJdCgpsZXQgY3MwOiBDaGFyU2V0ID0geydhJyAuLiAneicsICdBJyAuLiAnWicsICcwJyAuLiAnOSd9CmxldCBjczE6IENoYXJTZXQgPSB7J2EnLi4gJ2QnfQpsZXQgY3MyOiBDaGFyU2V0ID0geydjJy4uICdmJ30KbGV0IGNzMzogQ2hhclNldCA9IHsnYycsICdkJ30KCmFzc2VydCBjczEgKyBjczIgPT0geydhJyAuLiAnZid9CmFzc2VydCBjczEgLSBjczIgPT0geydhJywgJ2InfQphc3NlcnQgY3MxICogY3MyID09IHsnYycsICdkJ30KYXNzZXJ0IGNzMSAhPSBjczIKYXNzZXJ0IGNzMSA+IGNzMwphc3NlcnQgJ2EnIGluIGNzMQphc3NlcnQgY3MxLmNvbnRhaW5zKCdhJykKYXNzZXJ0ICdlJyBub3RpbiBjczEK</textarea>
+<textarea class="saurus-file" data-file="src/functions.nim" data-mode="text">IAo=</textarea>
+<textarea class="saurus-file" data-file="src/basic_types_varargs.nim" data-mode="text">IAo=</textarea>
 </div>
 </div><div class="saurus-overview"><ul></ul></div></div><div class="saurus-code"><div class="file-path"><span class="crumb-container"></span><i class="fa fa-fw fa-folder"></i></div><div class="saurus-editor"></div></div><div class="saurus-explorer"><div class="saurus-file-list"></div><a href="https://github.com/juancarlospaco/nim-tuto#nim-tuto" target="_blank" class="explorer-get-code"> <i class="fa fa-lg fa-github-square"> </i>View Code on GitHub</a></div></div></div></div><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script><script src="ace/ace.js"></script><script src="ace/theme-monokai.js"></script><script src="viewsaurus.js"></script></body></html>
